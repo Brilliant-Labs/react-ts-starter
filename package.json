@@ -1,0 +1,98 @@
+{
+  "name": "next-ts-template",
+  "version": "1.0.0",
+  "description": "A jumping off point for nextjs with typescript and semantic-release",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "commit": "npx git-cz",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brilliant-Labs/next-ts-template.git"
+  },
+  "husky":{
+    "pre-commit": "lint-staged",
+    "pre-push": "npm t"
+  },
+  "lint-staged":{
+    "*.{js,ts,jsx,tsx}": ["tslint --fix", "git add"]
+  },
+  "keywords": [
+    "template",
+    "nextjs",
+    "typescript",
+    "spa",
+    "zeit",
+    "now"
+  ],
+  "author": "Matt Johnston",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Brilliant-Labs/next-ts-template/issues"
+  },
+  "homepage": "https://github.com/Brilliant-Labs/next-ts-template#readme",
+  "dependencies": {
+    "@storybook/addon-storyshots": "^4.1.11",
+    "@types/next": "^7.0.6",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.21",
+    "@types/react-dom": "^16.0.11",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/storybook__addon-storyshots": "^3.4.4",
+    "@types/storybook__react": "^4.0.0",
+    "@zeit/next-typescript": "^1.1.1",
+    "github-api": "^3.0.0",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-docgen-typescript-loader": "^3.0.1",
+    "react-dom": "^16.7.0",
+    "semantic-ui-react": "^0.84.0",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.2.4",
+    "webpack": "^4.29.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-info": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.3.13",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-jest": "^24.0.0",
+    "babel-loader": "^8.0.5",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
+    "jest": "^24.0.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-test-renderer": "^16.7.0",
+    "ts-jest": "^23.10.5"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test-shim.js",
+      "<rootDir>/test-setup.js"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/test-preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/*.(ts|tsx|js)"
+    ]
+  }
+}
